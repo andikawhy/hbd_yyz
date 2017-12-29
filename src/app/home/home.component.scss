@@ -1,0 +1,200 @@
+blockquote{
+  display:block;
+  background: #fff;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #666;
+  text-align: justify;
+  
+  /*Borders - (Optional)*/
+  border-left: 15px solid #F25F5C;
+  border-right: 2px solid #F25F5C;
+  
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 2px 2px 15px #ccc;
+  -webkit-box-shadow: 2px 2px 15px #ccc;
+  box-shadow: 2px 2px 15px #ccc;
+}
+
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #999;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+}
+
+blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+blockquote a{
+  text-decoration: none;
+  background: #eee;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #c76c0c;
+}
+
+blockquote a:hover{
+ color: #666;
+}
+
+blockquote em{
+  font-style: italic;
+}
+
+.dimScreen {
+  padding:0;
+  margin:0;
+
+  top:0 auto;
+  left:0 auto;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.mobileScreen {
+  padding:0;
+  margin:0;
+
+  top:0 auto;
+  left:0 auto;
+
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+  font-size: 30px;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
+.box{
+    width: 500px;
+    height: 325px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -200px;
+    margin-left: -250px;
+}
+
+.text {
+    font-family: "Gochi Hand";
+    font-size: 20px;
+    color: #E36526;
+    text-align: center;
+}
+
+@-moz-keyframes pulse {
+    0% {
+      opacity: 0.2;
+      height: 1em;
+      width: 1em;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+    50% {
+      opacity: 0.9;
+      height: 3em;
+      width: 3em;
+      margin-top: -1.5em;
+      margin-left: -1.5em;
+    }
+    100% {
+      opacity: 0.2;
+      height: 1em;
+      width: 1em;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+  }
+  @-webkit-keyframes pulse {
+    0% {
+      opacity: 0.2;
+      height: 1em;
+      width: 1em;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+    50% {
+      opacity: 0.9;
+      height: 3em;
+      width: 3em;
+      margin-top: -1.5em;
+      margin-left: -1.5em;
+    }
+    100% {
+      opacity: 0.2;
+      height: 1em;
+      width: 1em;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+  }
+  @-o-keyframes pulse {
+    0% {
+      opacity: 0.2;
+      height: 1em;
+      width: 1em;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+    50% {
+      opacity: 0.9;
+      height: 3em;
+      width: 3em;
+      margin-top: -1.5em;
+      margin-left: -1.5em;
+    }
+    100% {
+      opacity: 0.2;
+      height: 1em;
+      width: 1em;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 0.2;
+      height: 1em;
+      width: 1em;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+    50% {
+      opacity: 0.9;
+      height: 3em;
+      width: 3em;
+      margin-top: -1.5em;
+      margin-left: -1.5em;
+    }
+    100% {
+      opacity: 0.2;
+      height: 1em;
+      width: 1em;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+  }
+

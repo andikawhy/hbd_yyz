@@ -1,0 +1,361 @@
+<app-loading *ngIf="loading === true"></app-loading>
+
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="home" [@enterAnimation]>
+    <div fxFlex="80">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <mat-card style="
+            border-radius: 2%; 
+            background-color: transparent; 
+            font-family: Open Sans;">
+            <mat-card-title style="font-size: 35px; text-align: center;">
+                Hai
+            </mat-card-title>
+            <mat-card-subtitle style="font-size: 20px; text-align: center;">
+                "Menyapa"
+            </mat-card-subtitle>
+            <mat-card-content style="font-size: 16px; max-height: 200px; overflow-y: auto">
+                Teruntuk Fauzia,
+                <br> apa kabar?
+                <br>
+                <br> Gambar latar website ini ialah bentuk lain dari kesukaanmu dan kesukaanku. Kita sama-sama suka langit, entah
+                itu melihat matahari memulai paginya, melihat ia mengakhiri hari, hingga menghadiri pesta para bintang.
+                <br>
+                <br> Banyak langkah telah terbentuk di bawah genggam erat tanganmu, dan akhirnya aku berpikir untuk mengajakmu
+                berjalan sedikit ke belakang, menikmati cerita masa lalu kita yang aku rasa cukup pas untuk kau baca di pagi hari yang
+                indah ini.
+                <br>
+                <br> Supaya menyenangkan, aku membuat teka-teki sederhana untuk berpindah ke setiap ceritanya, jawab dengan cara menebak
+                jawaban sesuai petunjuk yang ada.
+                <br>
+                <br> Untuk pembuka, biar aku awali dari hari Sabtu, tanggal ... saat aku pertama kali mengirimkan pesan untukmu
+                sebelum kita menjadi dekat.
+            </mat-card-content>
+            <mat-card-content>
+                    <div fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center center">
+                        <mat-input-container>
+                            <input matInput #myInput name="myInput" placeholder="Tulis dengan lengkap ya">
+                        </mat-input-container>
+                        <p style="color: #E36526" *ngIf="salah"> {{salah}} </p>
+                    </div>
+            </mat-card-content>
+        </mat-card>
+        <br>
+        <br>
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <button mat-raised-button color="accent" (click)="openDialog(myInput.value)">
+                Tebak!</button>
+        </div>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="space-around center" *ngIf="pertama" ngClass.xs="mobileScreen" ngClass.sm="mobileScreen" ngClass="dimScreen">
+    <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxLayoutAlign="center center">
+        <mat-card style="
+                border-radius: 2%; 
+                background-color: transparent; 
+                font-family: Open Sans;">
+            <mat-card-title style="font-size: 35px; text-align: center;">
+                Pertemuan
+            </mat-card-title>
+            <mat-card-subtitle style="font-size: 20px; text-align: center;">
+                "Jabat Tangan Pertama"
+            </mat-card-subtitle>
+            <mat-card-content>
+                <div fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center center">
+                    <iframe frameborder="0" style="border:0" 
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDU1aTue-7O2hvT9LktuEgrPc1RiFHEbvE&q=KPFT"
+                    allowfullscreen>
+                    </iframe>
+                </div>
+            </mat-card-content>
+            <mat-card-content style="font-size: 16px; max-height: 200px; overflow-y: auto">
+                <br> Malam itu, kita duduk berdua dan berjabat tangan untuk pertama kalinya. Aku menatapmu tanpa sedikitpun prasangka
+                perkara cinta.
+                <br>
+                <br> Hanya beberapa sapa basa-basi untuk menghangatkan suasana saat itu, aku tak begitu mengenalmu bahkan aku
+                tak ingat jika pernah berbicara denganmu. Lalu kita berjalan sendiri-sendiri lagi.
+                <br>
+                <br> Satu, dua, dan banyak hari berlalu. Kita bertemu dalam kondisi-kondisi yang mustahil untuk ditebak, disengaja,
+                apalagi direncanakan. Ya memang, aku mencintaimu tanpa rencana.
+                <br>
+                <br> Mungkin kamu bosan mendengar ini, tapi sumpah aku benar-benar menikmati ingatan saat pertama kali aku
+                senyum-senyum sendiri karena melihatmu tertawa di salah satu restoran cepat saji. Aku benar-benar jatuh ke
+                hatimu hari itu, lalu memutuskan untuk mempertahankan tawa dan senyummu yang selalu aku sukai.
+                <br>
+                <br> Aku terus menghubungimu melalui media sosial selama ... bulan.
+            </mat-card-content>
+            <mat-card-content>
+                <div fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center center">
+                    <mat-input-container>
+                        <input matInput #myInput2 name="myInput2" placeholder="Tulis dengan lengkap ya">
+                    </mat-input-container>
+                    <p style="color: #E36526" *ngIf="salah"> {{salah}} </p>
+                </div>
+            </mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <button mat-raised-button color="accent" (click)="pertanyaanPertama(myInput2.value)">
+                    Tebak!</button>
+            </div>
+        </mat-card>
+    </div>
+    <br>
+    <br>
+    <div fxFlex="50" fxFlex.xs="90" fxFlex.sm="90" fxLayout="column" fxLayoutAlign="center center">
+        <blockquote>
+            Anak burung sawah lahir sudah <br>
+            Cerita mereka dimulai dalam satu, dua langkah <br>
+            Cerita tentang makan pertama kali <br>
+            Hingga impian untuk terbang seperti rajawali. <br> 
+        </blockquote>
+        <!-- <ngx-gallery style="z-index: 1;" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery> -->
+    </div>
+</div>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="space-around center" *ngIf="kedua" ngClass.xs="mobileScreen" ngClass.sm="mobileScreen" ngClass="dimScreen" [@enterAnimation]>
+    
+    <div fxFlex="50" fxFlex.xs="90" fxFlex.sm="90" fxLayout="column" fxLayoutAlign="center center">
+        <blockquote>
+            Anak burung sawah lahir sudah <br>
+            Cerita mereka dimulai dalam satu, dua langkah <br>
+            Cerita tentang makan pertama kali <br>
+            Hingga impian untuk terbang seperti rajawali. <br><br>
+
+            Sang anak terus berlatih <br>
+            Prasangka-prasangka baik meski terus tertatih <br>
+            Jatuh, bangun, jatuh, bangun <br>
+            Laut, gunung, kota, gurun <br> 
+        </blockquote>
+        <!-- <ngx-gallery style="z-index: 1;" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery> -->
+    </div>
+    <br>
+    <br>
+    <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxLayoutAlign="center center">
+        <mat-card style="
+                border-radius: 2%; 
+                background-color: transparent; 
+                font-family: Open Sans;">
+            <mat-card-title style="font-size: 35px; text-align: center;">
+                Perjalanan
+            </mat-card-title>
+            <mat-card-subtitle style="font-size: 20px; text-align: center;">
+                "Melangkah Berdua"
+            </mat-card-subtitle>
+            <mat-card-content>
+                <div fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center center">
+                    <img style="
+                            background-size:100%;
+                            height:200px;
+                            width:200px;" src="{{urlGambar}}" />
+                </div>
+            </mat-card-content>
+            <mat-card-content style="font-size: 16px; max-height: 200px; overflow-y: auto">
+                <br> Aku mulai terbiasa melihat samar senyummu saat mata ini terpejam. Mulai terbiasa untuk menambah beberapa baris doa dalam sujudku
+                biar senyum itu tak pudar sedikitpun.
+                <br>
+                <br> Begitu jelas bahwa aku mulai mencintaimu, mulai cemburu saat tawamu berlarian bersama lelaki lain,
+                mulai khawatir apabila sedih tiba-tiba hadir di hidupmu, mulai asik sendiri dengan "kamu sudah makan belum ya?".
+                <br>
+                <br> Sialnya, aku itu bodoh dalam hal menyembunyikan perasaan. Kala itu, saat liburan panjang kamu dengan tepat menebak semua isi hatiku.
+                lalu aku mengaku. Untung saja kamu menerima, untung saja aku cukup tampan untuk memenangkan hatimu. Kita bersama. Aku bahagia bisa menjagamu.
+                <br>
+                <br> Minggu demi minggu, bulan demi bulan kita melangkah bersama. Berdua. Berjalan bersamamu itu menyenangkan karena kamu egois, kamu tukang marah,
+                kamu cemburuan, kamu sensitif, dan yang paling menyenangkan adalah kamu mau berusaha berubah untuk menghilangkan semua itu.
+                Sekali lagi ya, melangkah berdua denganmu itu menyenangkan.
+                <br>
+                <br> Saat itu adalah hari ... . Kita memutuskan untuk bertemu dalam kilometer yang tak biasa.
+            </mat-card-content>
+            <mat-card-content>
+                <div fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center center">
+                    <mat-input-container>
+                        <input matInput #myInput3 name="myInput3" placeholder="Tulis dengan lengkap ya">
+                    </mat-input-container>
+                    <p style="color: #E36526" *ngIf="salah"> {{salah}} </p>
+                </div>
+            </mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <button mat-raised-button color="accent" (click)="pertanyaanKedua(myInput3.value)">
+                    Tebak!</button>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="space-around center" *ngIf="ketiga" ngClass.xs="mobileScreen" ngClass.sm="mobileScreen" ngClass="dimScreen" [@enterAnimation]>
+    <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxLayoutAlign="center center">
+        <mat-card style="
+                border-radius: 2%; 
+                background-color: transparent; 
+                font-family: Open Sans;">
+            <mat-card-title style="font-size: 35px; text-align: center;">
+                Singgah
+            </mat-card-title>
+            <mat-card-subtitle style="font-size: 20px; text-align: center;">
+                "Istirahat Sebentar"
+            </mat-card-subtitle>
+            <mat-card-content>
+                <div fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center center">
+                    <img style="
+                            background-size:100%;
+                            height:200px;
+                            width:200px;" src="../../assets/images/nasi_goreng.jpg" />
+                </div>
+            </mat-card-content>
+            <mat-card-content style="font-size: 16px; max-height: 200px; overflow-y: auto">
+                <br> Kita sudah berjalan jauh. Sepertinya kamu perlu istirahat.
+                <br>
+                <br> Terima kasih ya sudah mau menemaniku sampai titik sekarang. Memang aku akan tetap hidup tanpamu,
+                tapi hidup yang bagaimana aku tak tahu. Terima kasih karna telah banyak memberi saran saat kita bertemu.
+                Terima kasih untuk segalanya.
+                <br>
+                <br> Mau minum apa? Mogu-mogu? Aku suka mogu-mogu rasa kelapa muda tapi kamu tak suka, kesal. Di akhir tahun ini,
+                kita harus beristirahat sejenak (baca: LDR), menutup dengan doa biar tahun depan bisa lebih baik lagi,
+                entah dari sisi hubungan atau masing-masing kehidupan kita berdua dan semua orang di dunia ini.
+                <br>
+                <br> Lagunya sudah mau habis, aku harus menutup cerita ini dengan segera dan kamu bisa melanjutkan
+                jalan-jalan bersama ayah dan adek.
+                <br>
+                <br> Kamu mau makan nasi goreng? Yuk, ke nasi goreng kesukaan kita di jalan ... .
+            </mat-card-content>
+            <mat-card-content>
+                <div fxFlex="100" fxFlex.xs="100" fxLayoutAlign="center center">
+                    <mat-input-container>
+                        <input matInput #myInput4 name="myInput4" placeholder="Tulis dengan lengkap ya">
+                    </mat-input-container>
+                    <p style="color: #E36526" *ngIf="salah"> {{salah}} </p>
+                </div>
+            </mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <button mat-raised-button color="accent" (click)="pertanyaanKetiga(myInput4.value)">
+                    Tebak!</button>
+            </div>
+        </mat-card>
+    </div>
+    <br>
+    <br>
+    <div fxFlex="50" fxFlex.xs="90" fxFlex.sm="90" fxLayout="column" fxLayoutAlign="center center">
+        <blockquote>
+            Anak burung sawah lahir sudah <br>
+            Cerita mereka dimulai dalam satu, dua langkah <br>
+            Cerita tentang makan pertama kali <br>
+            Hingga impian untuk terbang seperti rajawali. <br><br>
+
+            Sang anak terus berlatih <br>
+            Prasangka-prasangka baik meski terus tertatih <br>
+            Jatuh, bangun, jatuh, bangun <br>
+            Laut, gunung, kota, gurun <br><br>
+
+            Di penghujung hari sang anak duduk di ujung ranting <br>
+            Berdoa agar ada hari tuk bisa terbang ke ujung tebing <br>
+            Ia menutup hari lelahnya <br>
+            Terlelap, bermimpi esok akan jaya <br><br>
+        </blockquote>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="penutup" [@enterAnimation]>
+    <div fxFlex="80">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <mat-card style="
+            border-radius: 2%; 
+            background-color: transparent; 
+            font-family: Open Sans;">
+            <mat-card-title style="font-size: 35px; text-align: center;">
+                Penutup
+            </mat-card-title>
+            <mat-card-subtitle style="font-size: 20px; text-align: center;">
+                "Harapan"
+            </mat-card-subtitle>
+            <mat-card-content style="font-size: 16px; max-height: 200px; overflow-y: auto">
+                Teruntuk Fauzia,
+                <br> apa kabar? Aku sangat suka menanyakan kabarmu, aku ingin kamu selalu baik-baik saja.
+                <br>
+                <br> Di usiamu yang ke-20 ini, aku berharap segala hal baik datang kepadamu, doa-doa dan keinginan yang kamu
+                mau dapat tercapai. Harapan yang lebih pribadi aku telah kirim jam 12 malam tadi.
+                <br>
+                Aku mencintaimu.
+                <br>
+                <div style="text-align: right">
+                    <br> Tertanda,
+                    <br>
+                    <br>
+                    <br>
+                    Andika
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <br>
+        <br>
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <button mat-raised-button color="accent" (click)="penutupCerita()">
+                Tekan Aku!</button>
+        </div>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="space-around center" *ngIf="akhir" ngClass.xs="mobileScreen" ngClass.sm="mobileScreen" ngClass="dimScreen" [@enterAnimation]>
+    <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxLayoutAlign="center center">
+        <mat-card style="
+                border-radius: 2%; 
+                background-color: transparent; 
+                font-family: Open Sans;">
+            <mat-card-title style="font-size: 35px; text-align: center;">
+                Puisi ke-42
+            </mat-card-title>
+            <mat-card-subtitle style="font-size: 20px; text-align: center;">
+                "Anak Burung"
+            </mat-card-subtitle>
+                <blockquote>
+                    Anak burung sawah lahir sudah <br>
+                    Cerita mereka dimulai dalam satu, dua langkah <br>
+                    Cerita tentang makan pertama kali <br>
+                    Hingga impian untuk terbang seperti rajawali. <br><br>
+        
+                    Sang anak terus berlatih <br>
+                    Prasangka-prasangka baik meski terus tertatih <br>
+                    Jatuh, bangun, jatuh, bangun <br>
+                    Laut, gunung, kota, gurun <br><br>
+        
+                    Di penghujung hari sang anak duduk di ujung ranting <br>
+                    Berdoa agar ada hari tuk bisa terbang ke ujung tebing <br>
+                    Ia menutup hari lelahnya <br>
+                    Terlelap, bermimpi esok akan jaya <br><br>
+
+                    Esok hari, ia mulai lagi <br>
+                    Berlatih terbang ke langit entah yang mana <br>
+                    Esok hari, kita saling mencintai <br>
+                    Bersama, terbang ke langit entah yang mana <br><br>
+                </blockquote>
+        </mat-card>
+    </div>
+    <br>
+    <br>
+    <div fxFlex="50" fxFlex.xs="90" fxFlex.sm="90" fxLayout="column" fxLayoutAlign="center center">
+            <mat-card style="
+            border-radius: 2%; 
+            background-color: white; 
+            font-family: Open Sans;">
+        <mat-card-title style="font-size: 35px; text-align: center;">
+            Akhir Cerita
+        </mat-card-title>
+        <mat-card-subtitle style="font-size: 20px; text-align: center;">
+            "Bingkisan kecil"
+        </mat-card-subtitle>
+                <img style="
+                        background-size:100%;
+                        max-height: 350px;
+                        max-width: 350px;" src="../../assets/images/hbd.png" />
+    </mat-card>
+    </div>
+</div>
+
+<audio autoplay>
+    <source src="../../assets/sounds/backsong.mp3" type="audio/mpeg">
+</audio>
